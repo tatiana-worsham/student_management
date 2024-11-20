@@ -1,0 +1,21 @@
+Department      Course Number   Instructor          
+Math            101             Dr. John Smith      
+Math            102             Dr. Jane Doe        
+Chemistry       201             Dr. Alice Johnson   
+Chemistry       202             Dr. Bob Brown       
+Physics         301             Dr. Charlie Davis   
+Physics         302             Dr. Diana Evans     
+Biology         401             Dr. Eve Wilson      
+Biology         402             Dr. Frank Miller    
+ComputerScience 501             Dr. Grace Lee       
+ComputerScience 502             Dr. Henry Clark     
+History         601             Dr. Irene White     
+History         602             Dr. Jack Black      
+English         701             Dr. Karen Green     
+English         702             Dr. Larry Brown     
+Art             801             Dr. Mary Blue       
+Art             802             Dr. Nancy Red       
+Music           901             Dr. Oliver Yellow   
+Music           902             Dr. Paula Purple    
+Economics       1001            Dr. Quentin Orange  
+Economics       1002            Dr. Rachel Pink     

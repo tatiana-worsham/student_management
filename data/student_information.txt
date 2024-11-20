@@ -1,0 +1,13 @@
+Gary,Doe,123 Main St,123-456-7890,101
+Julia,Smith,456 Elm St,234-567-8901,102
+Bob,Brown,101 Pine St,456-789-0123,104
+Charlie,Davis,202 Maple St,567-890-1234,105
+Diana,Evans,303 Cedar St,678-901-2345,106
+Eve,Wilson,404 Birch St,789-012-3456,107
+Frank,Miller,505 Walnut St,890-123-4567,108
+Grace,Lee,606 Chestnut St,901-234-5678,109
+Henry,Clark,707 Spruce St,012-345-6789,110
+John,Smith,125 Fresno Dr,254-145-1452,993
+Ana,King,14 Brook St,254-147-2058,861
+Alice,Johnson,789 Oak St,345-678-9012,263
+Ary,Smith,5504 Hights St,2541471471,534

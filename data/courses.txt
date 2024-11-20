@@ -1,0 +1,20 @@
+College Algebra,101,3,Math,John Smith      
+Algorithms,102,3,Computer Science,Jane Doe        
+Introduction to Chemistry,201,3,Chemistry,Alice Johnson   
+Physical Chemistry,202,3,Chemistry,Bob Brown       
+Genetics,301,3,Biology,Dr. Charlie Davis   
+Data Structures,302,3,Computer Science,Dr. Diana Evans     
+Human Anatomy,401,3,Biology,Eve Wilson      
+Microbiology,402,3,Biology,Frank Miller    
+Introduction to Programming,501,3,Computer Science, Dr. Grace Lee       
+Web Developmen,502,3,Computer Science, Dr. Henry Clark     
+Mobile Development,601,3,Computer Science,Dr. Irene White     
+Data Structures,101,3,Computer Science,John Smith
+Operating Systems,201,3,Computer Science,Alice Johnson
+Database Systems,202,3,Computer Science,Bob Brown
+Computer Networks,301,3,Computer Science,Charlie Davis
+Software Engineering,302,3,Computer Science,Diana Evans
+Artificial Intelligence,401,3,Computer Science,Eve Wilson
+Machine Learning,402,3,Computer Science,Frank Miller
+Cyber Security,501,3,Computer Science,Grace Lee
+Cloud Computing,502,3,Computer Science,Henry Clark

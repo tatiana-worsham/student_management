@@ -54,11 +54,18 @@ public class Student {
     public int getStudentId() {
         return this.studentId;
     }
-
     public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
-
+    // Get and set the student's name.
+    public String getStudentName() {
+        return this.firstName + " " + this.lastName;
+    }
+    public void setStudentName(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    
     public ArrayList<Subject> getSubjects() {
         return this.subjects;
     }
@@ -73,8 +80,10 @@ public class Student {
         String str = "First Name: " + firstName
                 + "\n" + "Last Name: " + lastName
                 + "\n" + "Address: " + address
-                + "\n" + "Phone Number: " + phoneNumber;
+                + "\n" + "Phone Number: " + phoneNumber
+                + "\n" + "Student ID: " + studentId;
         // Return the string.
         return str;
     }
+    
 }

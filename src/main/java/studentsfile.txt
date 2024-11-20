@@ -1,0 +1,16 @@
+student name		student id	
+Heather Gray		111
+Craig Brand		112
+Wade Whitworth		122
+Terri Olander		222
+Charlie Lindberg	345	
+Hilary Marschke		236
+Shelly Smith		232
+Mike Gunderson		333
+Arthur Weston		344
+Thomas Larson		444
+Arnold Robert		555
+Robert Gneiss		678
+Paula Valentine		777
+Richard Malinowski	888
+Christine Barton	987

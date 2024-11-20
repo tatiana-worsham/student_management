@@ -1,0 +1,328 @@
+Student Name: Gary,Doe
+Student ID: 101
+College Algebra: 90
+Introduction to Chemistry: 75
+Physical Chemistry: 91
+Genetics: 68
+Human Anatomy: 83
+Microbiology: 85
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 0
+Database Systems: 0
+Computer Networks: 0
+Software Engineering: 0
+Artificial Intelligence: 0
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 24
+
+Student Name: Julia,Smith
+Student ID: 102
+College Algebra: 85
+Introduction to Chemistry: 90
+Physical Chemistry: 75
+Genetics: 78
+Human Anatomy: 81
+Microbiology: 85
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 0
+Database Systems: 0
+Computer Networks: 0
+Software Engineering: 0
+Artificial Intelligence: 0
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 24
+
+Student Name: Bob,Brown
+Student ID: 104
+College Algebra: 95
+Introduction to Chemistry: 85
+Physical Chemistry: 95
+Genetics: 85
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 0
+Database Systems: 0
+Computer Networks: 0
+Software Engineering: 0
+Artificial Intelligence: 0
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 18
+
+Student Name: Charlie,Davis
+Student ID: 105
+College Algebra: 70
+Introduction to Chemistry: 80
+Physical Chemistry: 83
+Genetics: 85
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 0
+Database Systems: 0
+Computer Networks: 0
+Software Engineering: 0
+Artificial Intelligence: 0
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 15
+
+Student Name: Diana,Evans
+Student ID: 106
+College Algebra: 90
+Introduction to Chemistry: 0
+Physical Chemistry: 0
+Genetics: 0
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 75
+Database Systems: 85
+Computer Networks: 70
+Software Engineering: 80
+Artificial Intelligence: 85
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 24
+
+Student Name: Eve,Wilson
+Student ID: 107
+College Algebra: 85
+Introduction to Chemistry: 0
+Physical Chemistry: 0
+Genetics: 0
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 90
+Database Systems: 75
+Computer Networks: 78
+Software Engineering: 81
+Artificial Intelligence: 85
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 24
+
+Student Name: Frank,Miller
+Student ID: 108
+College Algebra: 95
+Introduction to Chemistry: 0
+Physical Chemistry: 0
+Genetics: 0
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 95
+Database Systems: 85
+Computer Networks: 95
+Software Engineering: 85
+Artificial Intelligence: 0
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 22
+
+Student Name: Grace,Lee
+Student ID: 109
+College Algebra: 70
+Introduction to Chemistry: 0
+Physical Chemistry: 0
+Genetics: 0
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 81
+Web Development: 95
+Mobile Development: 78
+Data Structures: 0
+Operating Systems: 0
+Database Systems: 0
+Computer Networks: 85
+Software Engineering: 0
+Artificial Intelligence: 92
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 25
+
+Student Name: Henry,Clark
+Student ID: 110
+College Algebra: 90
+Introduction to Chemistry: 0
+Physical Chemistry: 0
+Genetics: 0
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 84
+Data Structures: 0
+Web Development: 91
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 78
+Database Systems: 81
+Computer Networks: 85
+Software Engineering: 0
+Artificial Intelligence: 0
+Machine Learning: 88
+Cyber Security: 96
+Cloud Computing: 0
+Average Grade: 34
+
+Student Name: John,Smit
+Student ID: 993
+College Algebra: 85
+Introduction to Chemistry: 0
+Physical Chemistry: 0
+Genetics: 0
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 90
+Database Systems: 86
+Computer Networks: 85
+Software Engineering: 78
+Artificial Intelligence: 81
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 25
+
+Student Name: Ana,King
+Student ID: 861
+College Algebra: 95
+Introduction to Chemistry: 0
+Physical Chemistry: 0
+Genetics: 0
+Human Anatomy: 0
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 85
+Data Structures: 89
+Web Development: 94
+Mobile Development: 83
+Data Structures: 77
+Operating Systems: 92
+Database Systems: 93
+Computer Networks: 85
+Software Engineering: 79
+Artificial Intelligence: 82
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 47
+
+Student Name: Alice,Johnson
+Student ID: 263
+College Algebra: 70
+Introduction to Chemistry: 93
+Physical Chemistry: 89
+Genetics: 94
+Human Anatomy: 74
+Microbiology: 0
+Introduction to Programming: 0
+Algorithms: 0
+Data Structures: 0
+Web Development: 0
+Mobile Development: 0
+Data Structures: 0
+Operating Systems: 0
+Database Systems: 0
+Computer Networks: 0
+Software Engineering: 0
+Artificial Intelligence: 0
+Machine Learning: 0
+Cyber Security: 0
+Cloud Computing: 0
+Average Grade: 21
+
+Highest Grade in College Algebra: 95
+Lowest Grade in College Algebra: 70
+Highest Grade in Introduction to Chemistry: 93
+Lowest Grade in Introduction to Chemistry: 75
+Highest Grade in Physical Chemistry: 95
+Lowest Grade in Physical Chemistry: 75
+Highest Grade in Genetics: 94
+Lowest Grade in Genetics: 68
+Highest Grade in Human Anatomy: 83
+Lowest Grade in Human Anatomy: 74
+Highest Grade in Microbiology: 85
+Lowest Grade in Microbiology: 85
+Highest Grade in Introduction to Programming: 0
+Lowest Grade in Introduction to Programming: 0
+Highest Grade in Algorithms: 85
+Lowest Grade in Algorithms: 84
+Highest Grade in Data Structures: 89
+Lowest Grade in Data Structures: 81
+Highest Grade in Web Development: 95
+Lowest Grade in Web Development: 91
+Highest Grade in Mobile Development: 83
+Lowest Grade in Mobile Development: 78
+Highest Grade in Data Structures: 77
+Lowest Grade in Data Structures: 77
+Highest Grade in Operating Systems: 95
+Lowest Grade in Operating Systems: 75
+Highest Grade in Database Systems: 93
+Lowest Grade in Database Systems: 75
+Highest Grade in Computer Networks: 95
+Lowest Grade in Computer Networks: 70
+Highest Grade in Software Engineering: 85
+Lowest Grade in Software Engineering: 78
+Highest Grade in Artificial Intelligence: 92
+Lowest Grade in Artificial Intelligence: 81
+Highest Grade in Machine Learning: 88
+Lowest Grade in Machine Learning: 88
+Highest Grade in Cyber Security: 96
+Lowest Grade in Cyber Security: 96
+Highest Grade in Cloud Computing: 0
+Lowest Grade in Cloud Computing: 0
