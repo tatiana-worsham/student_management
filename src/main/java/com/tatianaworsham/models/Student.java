@@ -8,7 +8,7 @@ public class Student {
     private String address;
     private String phoneNumber;
     private int studentId;
-    private ArrayList<Subject> subjects;
+    private final ArrayList<Subject> subjects;
 
     public Student(String firstName, String lastName, String address, String phoneNumber, int studentId) {
         this.firstName = firstName;
@@ -16,7 +16,7 @@ public class Student {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.studentId = studentId;
-        this.subjects = new ArrayList<Subject>();
+        this.subjects = new ArrayList<>();
     }
 
     public String getFirstName() {
@@ -70,9 +70,7 @@ public class Student {
         return this.subjects;
     }
 
-    public void addSubject(Subject subject) {
-        this.subjects.add(subject);
-    }
+   
 
     @Override
     public String toString() {

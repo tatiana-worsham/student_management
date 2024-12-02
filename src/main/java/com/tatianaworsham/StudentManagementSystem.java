@@ -1,17 +1,15 @@
 package com.tatianaworsham;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;  // Import the BufferedReader class for reading text files
+import java.io.FileReader;            // Import the File class for file handling
+import java.io.FileWriter;   // Import this class to handle errors for file handling
+import java.io.IOException;      // Import the FileReader class for reading text files
+import java.io.PrintWriter;      // Import the FileWriter class for writing text files
+import java.util.ArrayList;     // Import this class to handle errors for file handling
+import java.util.Scanner;     // Import the PrintWriter class for writing text files
 
-import com.tatianaworsham.models.Student;
-import com.tatianaworsham.models.Subject;
+import com.tatianaworsham.models.Student;      // Import the ArrayList class for storing objects
+import com.tatianaworsham.models.Subject;       // Import the Scanner class to read user input
 
 public class StudentManagementSystem {
 
@@ -37,9 +35,10 @@ public class StudentManagementSystem {
     private void saveStudentsToFile() {
         try (PrintWriter writer = new PrintWriter(new FileWriter("data\\student_information.txt"))) {
             // Write the header
+            writer.println("First Name,Last Name,Address,Phone Number,Student ID");
 
             // Write the student information
-            for (Student s : students) {
+            for (Student s : this.students) {
                 writer.printf("%s,%s,%s,%s,%d%n", s.getFirstName(), s.getLastName(), s.getAddress(), s.getPhoneNumber(), s.getStudentId());
             }
 
@@ -55,11 +54,10 @@ public class StudentManagementSystem {
 
     private void saveSubjectsToFile() {
         try (PrintWriter writer = new PrintWriter(new FileWriter("data\\\\courses.txt"))) {
-            // Write the header
 
             // Write the student information
             for (Subject s : subjects) {
-                writer.printf("%s,%s,%s,%s,%d%n", s.getcourseName(), s.getCourseNumber(), s.getCredits(), s.getDepartment(), s.getInstructor());
+                writer.printf("%s,%s,%s,%s,%s%n", s.getcourseName(), s.getCourseNumber(), s.getCredits(), s.getDepartment(), s.getInstructor());
             }
             System.out.println("Student data saved to file successfully.");
         } catch (IOException e) {
@@ -78,71 +76,84 @@ public class StudentManagementSystem {
                 System.out.println("2. Unregister a Student");
                 System.out.println("3. Update Student Information");
                 System.out.println("4. Reports");
-                System.out.println("5. Enroll Student in a Course");
-                System.out.println("6. Calculate Exam Grade");
-                System.out.println("7. Calculate Pass/Fail Activity Grade");
-                System.out.println("8. Calculate Pass/Fail Exam Grade");
-                System.out.println("9. Find Student by ID");
-                System.out.println("10. Exit");
+                System.out.println("5. Calculate Exam Grade");
+                System.out.println("6. Calculate Pass/Fail Exam Grade");
+                System.out.println("7. Exit");
+
                 choice = Integer.parseInt(this.input.nextLine());
                 validChoice = Validator.validateNumberFromOneToTen(choice);
                 if (validChoice == false) {
                     System.out.println("Invalid choice. Please enter a number between 1 and 10.");
                 }
-            } while (validChoice == false);
+                
+            } while (!validChoice);
+
             switch (choice) {
-
-                case 1:
-                    registerStudent();
-                    saveStudentsToFile();
-                    break;
-                case 2:
-                    unregisterStudent();
-                    saveStudentsToFile();
-                    break;
-                case 3:
-                    updateStudentInformation();
-                    saveStudentsToFile();
-                    break;
-                case 4:
-                    Reports();
-                    break;
-                case 5:
-                    enrollStudentInCourse();
-                    saveStudentsToFile();
-                    break;
-                case 6:
-                    Exam exam = new Exam(100, 100);
-                    exam.calculateExam();
-                    break;
-                case 7:
-                    //PassFailActivityGrade();
-                    break;
-                case 8:
-                    //calculatePassFailExamGrade();
-                    PassFailExam passFailExam = new PassFailExam(100, 100, 70);
-                    passFailExam.calculateExam();
-                    break;
-
-                case 9:
-
-                    break;
-                case 10:
-                    System.out.println("Exiting...");
-                    this.input.close();
+                case 1 -> registerStudent();
+                case 2 -> unregisterStudent();
+                case 3 -> updateStudentInformation();
+                case 4 -> Reports();
+                case 5 -> calculateExamGrade();
+                case 6 -> calculatePassFailExamGrade();
+                case 7 -> {
+                    System.out.println("Exiting the system...");
                     return;
-                default:
-                    System.out.println("Invalid choice.");
-                    break;
+                }
+                default -> System.out.println("Invalid choice.");
             }
         }
     }
 
+    private void calculatePassFailExamGrade() {
+        // Get the number of questions in the exam.
+        System.out.print("How many questions are in the exam? ");
+        int questions = Integer.parseInt(input.nextLine());
+
+        // Get the number of questions missed.
+        System.out.print("How many questions did the student miss? ");
+        int missed = Integer.parseInt(input.nextLine());
+
+        // Get the minimum passing score.
+        System.out.print("What is the minimum passing score? ");
+        double minPassingScore = Double.parseDouble(input.nextLine());
+
+        // Create a PassFailExam object.
+        PassFailExam exam = new PassFailExam(questions, missed, minPassingScore);
+
+        // Display the test results.
+        System.out.printf("Each question counts %.2f points.%n", exam.getPointsEach());
+        System.out.printf("The exam score is %.2f%n", exam.getScore());
+        System.out.printf("The exam grade is %c%n", exam.getGrade());
+
+    }
+
+    private void calculateExamGrade() {
+        int question = 0; // Example value
+        int missed = 0; // Example value
+
+        // Get the number of questions in the exam.
+        System.out.print("How many questions are in the exam? ");
+        question = Integer.parseInt(input.nextLine());
+
+        // Get the number of questions missed.
+        System.out.print("How many questions did the student miss? ");
+        missed = Integer.parseInt(input.nextLine());
+
+        // Create an Exam object 
+        Exam exam = new Exam(question, missed);
+        exam.calculateScore();
+
+        // Display the test results
+        System.out.println("Each question counts " + exam.getPointsEach() + " points.");
+        System.out.println("The exam score is " + exam.getScore());
+        System.out.println("The exam grade is " + exam.getGrade());
+    }
+
     private void registerStudent() {
-        boolean validFirstName = false;
-        boolean validLastName = false;
-        boolean validAddress = false;
-        boolean validPhoneNumber = false;
+        boolean validFirstName;
+        boolean validLastName;
+        boolean validAddress;
+        boolean validPhoneNumber;
         String firstName = "";
         String lastName = "";
         String address = "";
@@ -186,10 +197,9 @@ public class StudentManagementSystem {
     /* Generate a random student ID
          * @return student ID
      */
-
     private int generateStudentId() {
         final int[] studentId = {0};
-        boolean validStudentId = false;
+        boolean validStudentId;
         do {
             studentId[0] = (int) (Math.random() * 900) + 100;
             validStudentId = Validator.validateStudentId(studentId[0]);
@@ -299,30 +309,31 @@ public class StudentManagementSystem {
             } while (!validChoice);
 
             switch (choice) {
-                case 1:
+                case 1 -> {
                     updateStudentFirstName();
                     saveStudentsToFile();
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     updateStudentLastName();
                     saveStudentsToFile();
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     updateStudentAddress();
                     saveStudentsToFile();
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     updateStudentPhoneNumber();
                     saveStudentsToFile();
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.println("Returning to the main menu...");
                     System.out.println();
                     return;
-                default:
+                }
+                default -> {
                     System.out.println("Invalid choice.");
                     System.out.println();
-                    break;
+                }
             }
         }
     }
@@ -331,61 +342,28 @@ public class StudentManagementSystem {
      * Updates the first name of the given student. Prompts the user to enter a
      * valid first name and validates it. If the entered first name is valid, it
      * updates the student's first name.
-     *
-     * @param studentToUpdate the student whose first name is to be updated
      */
     private void updateStudentFirstName() {
         System.out.println("Update Student First Name");
         System.out.println("Enter Student ID:");
         int studentId = Integer.parseInt(this.input.nextLine().trim());
 
-        // Read the file and update the student's first name
-        File inputFile = new File("data\\student_information.txt");
-        File tempFile = new File("data\\temp_student_information.txt");
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile)); PrintWriter writer = new PrintWriter(new FileWriter(tempFile))) {
-
-            String line;
-            boolean studentFound = false;
-            while ((line = reader.readLine()) != null) {
-                String[] fields = line.split(",");
-                if (fields.length == 5) {
-                    int id = Integer.parseInt(fields[4].trim());
-                    if (id == studentId) {
-                        studentFound = true;
-                        boolean isFirstNameValid;
-                        String firstName = "";
-                        do {
-                            System.out.println("Enter Student New First Name:");
-                            firstName = this.input.nextLine().trim();
-                            isFirstNameValid = Validator.validateName(firstName);
-                        } while (!isFirstNameValid);
-                        fields[0] = firstName;
-                        System.out.println("First Name updated successfully.");
-                        System.out.println("Updated First Name: " + firstName);
-                        System.out.println();
-                    }
-                    writer.println(String.join(",", fields));
-                } else {
-                    writer.println(line);
-                }
-            }
-
-            if (!studentFound) {
-                System.out.println("Student ID not found.");
-            }
-
-        } catch (IOException e) {
-            System.err.println("Error updating student information: " + e.getMessage());
-        }
-
-        // Replace the original file with the updated file
-        if (!inputFile.delete()) {
-            System.err.println("Could not delete original file");
-            return;
-        }
-        if (!tempFile.renameTo(inputFile)) {
-            System.err.println("Could not rename temp file");
+        Student student = findStudentById(studentId);
+        // prompt the user for a new first name
+        if (student != null) {
+            boolean validFirstName;
+            String firstName;
+            do {
+                System.out.println("Enter Student New First Name:");
+                firstName = this.input.nextLine().trim();
+                validFirstName = Validator.validateName(firstName);
+            } while (!validFirstName);
+            student.setFirstName(firstName);
+            System.out.println("First Name updated successfully.");
+            System.out.println("Updated First Name: " + firstName);
+            System.out.println();
+        } else {
+            System.out.println("Student ID not found.");
         }
     }
 
@@ -398,56 +376,24 @@ public class StudentManagementSystem {
         System.out.println("Enter Student ID:");
         int studentId = Integer.parseInt(this.input.nextLine().trim());
 
-        // Read the file and update the student's last name
-        File inputFile = new File("data\\student_information.txt");
-        File tempFile = new File("data\\temp_student_information.txt");
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile)); PrintWriter writer = new PrintWriter(new FileWriter(tempFile))) {
-
-            String line;
-            boolean studentFound = false;
-            while ((line = reader.readLine()) != null) {
-                String[] fields = line.split(",");
-                if (fields.length == 5) {
-                    int id = Integer.parseInt(fields[4].trim());
-                    if (id == studentId) {
-                        studentFound = true;
-                        boolean isLastNameValid;
-                        String lastName = "";
-                        do {
-                            System.out.println("Enter Student New Last Name:");
-                            lastName = this.input.nextLine().trim();
-                            isLastNameValid = Validator.validateName(lastName);
-                        } while (!isLastNameValid);
-                        fields[1] = lastName;
-                        System.out.println("Last Name updated successfully.");
-                        System.out.println("Updated First Name: " + lastName);
-                        System.out.println();
-                    }
-                    writer.println(String.join(",", fields));
-                } else {
-                    writer.println(line);
-                }
-            }
-
-            if (!studentFound) {
-                System.out.println("Student ID not found.");
-            }
-
-        } catch (IOException e) {
-            System.err.println("Error updating student information: " + e.getMessage());
-        }
-
-        // Replace the original file with the updated file
-        if (!inputFile.delete()) {
-            System.err.println("Could not delete original file");
-            return;
-        }
-        if (!tempFile.renameTo(inputFile)) {
-            System.err.println("Could not rename temp file");
+        Student student = findStudentById(studentId);
+        // prompt the user for a new last name
+        if (student != null) {
+            boolean validLastName;
+            String lastName;
+            do {
+                System.out.println("Enter Student New Last Name:");
+                lastName = this.input.nextLine().trim();
+                validLastName = Validator.validateName(lastName);
+            } while (!validLastName);
+            student.setLastName(lastName);
+            System.out.println("Last Name updated successfully.");
+            System.out.println("Updated Last Name: " + lastName);
+            System.out.println();
+        } else {
+            System.out.println("Student ID not found.");
         }
     }
-
     /**
      * Updates the address of the given student. Prompts the user to enter a
      * valid address and validates it. If the address is valid, it updates the
@@ -457,55 +403,24 @@ public class StudentManagementSystem {
         System.out.println("Enter Student ID:");
         int studentId = Integer.parseInt(this.input.nextLine().trim());
 
-        // Read the file and update the student's address
-        File inputFile = new File("data\\student_information.txt");
-        File tempFile = new File("data\\temp_student_information.txt");
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile)); PrintWriter writer = new PrintWriter(new FileWriter(tempFile))) {
-
-            String line;
-            boolean studentFound = false;
-            while ((line = reader.readLine()) != null) {
-                String[] fields = line.split(",");
-                if (fields.length == 5) {
-                    int id = Integer.parseInt(fields[4].trim());
-                    if (id == studentId) {
-                        studentFound = true;
-                        boolean isAddressValid;
-                        String address = "";
-                        do {
-                            System.out.println("Enter Student New Address: ");
-                            address = this.input.nextLine().trim();
-                            isAddressValid = Validator.validateAddress(address);
-                        } while (!isAddressValid);
-                        fields[2] = address;
-                        System.out.println("Address updated successfully.");
-                        System.out.println("Updated Address: " + address);
-                        System.out.println();
-                    }
-                    writer.println(String.join(",", fields));
-                } else {
-                    writer.println(line);
-                }
-            }
-            if (!studentFound) {
-                System.out.println("Student ID not found.");
-            }
-
-        } catch (IOException e) {
-            System.err.println("Error updating student information: " + e.getMessage());
+        Student student = findStudentById(studentId);
+        // prompt the user for a new address
+        if (student != null) {
+            boolean validAddress;
+            String address;
+            do {
+                System.out.println("Enter Student New Address:");
+                address = this.input.nextLine().trim();
+                validAddress = Validator.validateAddress(address);
+            } while (!validAddress);
+            student.setAddress(address);
+            System.out.println("Address updated successfully.");
+            System.out.println("Updated address: " + address);
+            System.out.println();
+        } else {
+            System.out.println("Student ID not found.");
         }
-
-        // Replace the original file with the updated file
-        if (!inputFile.delete()) {
-            System.err.println("Could not delete original file");
-            return;
-        }
-        if (!tempFile.renameTo(inputFile)) {
-            System.err.println("Could not rename temp file");
-        }
-    }
-
+    }      
     /**
      * Updates the phone number of the given student. Prompts the user to enter
      * a new phone number and validates it. If the phone number is valid, it
@@ -515,87 +430,24 @@ public class StudentManagementSystem {
         System.out.println("Enter Student ID:");
         int studentId = Integer.parseInt(this.input.nextLine().trim());
 
-        // Read the file and update the student's phone number
-        File inputFile = new File("data\\student_information.txt");
-        File tempFile = new File("data\\temp_student_information.txt");
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile)); PrintWriter writer = new PrintWriter(new FileWriter(tempFile))) {
-
-            String line;
-            boolean studentFound = false;
-            while ((line = reader.readLine()) != null) {
-                String[] fields = line.split(",");
-                if (fields.length == 5) {
-                    int id = Integer.parseInt(fields[4].trim());
-                    if (id == studentId) {
-                        studentFound = true;
-                        boolean isPhoneNumberValid;
-                        String phoneNumber = "";
-                        do {
-                            System.out.println("Enter Student new phone number: XXX-XXX-XXXX ");
-                            phoneNumber = this.input.nextLine().trim();
-                            isPhoneNumberValid = Validator.validatePhoneNumber(phoneNumber);
-                        } while (!isPhoneNumberValid);
-                        fields[3] = phoneNumber;
-                        System.out.println("Phone number updated successfully.");
-                        System.out.println("Updated phone number: " + phoneNumber);
-                        System.out.println();
-                    }
-                    writer.println(String.join(",", fields));
-                } else {
-                    writer.println(line);
-                }
-            }
-            if (!studentFound) {
-                System.out.println("Student ID not found.");
-            }
-
-        } catch (IOException e) {
-            System.err.println("Error updating student information: " + e.getMessage());
-        }
-
-        // Replace the original file with the updated file
-        if (!inputFile.delete()) {
-            System.err.println("Could not delete original file");
-            return;
-        }
-        if (!tempFile.renameTo(inputFile)) {
-            System.err.println("Could not rename temp file");
-        }
-    }
-
-    private void enrollStudentInCourse() {
-        System.out.println("Enter Student ID:");
-        int studentId = Integer.parseInt(input.nextLine());
         Student student = findStudentById(studentId);
-
-        if (student == null) {
-            System.out.println("Student not found.");
-            return;
-        }
-        // Open the courses file
-        File file = new File("courses.txt");
-        // Read the course information from the file
-        if (file.exists()) {
-            try (Scanner inputFile = new Scanner(file)) {
-                while (inputFile.hasNextLine()) {
-                    String line = inputFile.nextLine();
-                    if (!line.trim().isEmpty()) {
-                        String[] parts = line.split("\\s+");
-                        if (parts.length == 3) {
-                            String courseName = parts[0];
-                            int courseNumber = Integer.parseInt(parts[1]);
-                            String instructor = parts[2];
-                            System.out.printf("%-15s %-15d %-20s%n", courseName, courseNumber, instructor);
-                        }
-                    }
-                }
-            } catch (FileNotFoundException e) {
-                System.out.println("File not found");
-            }
+        // prompt the user for a new phone number
+        if (student != null) {
+            boolean validPhoneNumber;
+            String phoneNumber;
+            do {
+                System.out.println("Enter Student New Phone Number:");
+                phoneNumber = this.input.nextLine().trim();
+                validPhoneNumber = Validator.validatePhoneNumber(phoneNumber);
+            } while (!validPhoneNumber);
+            student.setPhoneNumber(phoneNumber);;
+            System.out.println("Phone Number updated successfully.");
+            System.out.println("Updated Phone Number: " + phoneNumber);
+            System.out.println();
+        } else {
+            System.out.println("Student ID not found.");
         }
     }
-
     public void Reports() {
         String[] studentNames = {"Gary,Doe", "Julia,Smith", "Bob,Brown", "Charlie,Davis",
             "Diana,Evans", "Eve,Wilson", "Frank,Miller", "Grace,Lee", "Henry,Clark",

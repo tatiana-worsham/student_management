@@ -15,7 +15,19 @@ public class Subject {
     private String StudentName;
     private int studentId;
     private Validator validator = new Validator();
-    private ArrayList<Student> students;
+    private final ArrayList<Student> students;
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+    }
     private double averageGrade;
 
     public Subject(String courseName, int courseNumber, String StudentName, int studentId) {
@@ -24,7 +36,7 @@ public class Subject {
         this.courseNumber = courseNumber;
         this.StudentName = StudentName;
         this.studentId = studentId;
-        this.students = new ArrayList<Student>();
+        this.students = new ArrayList<>();
 
     }
     public Subject(String courseName, int courseNumber, int credits, String department, String Instructor){
@@ -33,7 +45,7 @@ public class Subject {
         this.credits = credits;
         this.department = department;
         this.Instructor = Instructor;
-        this.students = new ArrayList<Student>();
+        this.students = new ArrayList<>();
     }
 
 

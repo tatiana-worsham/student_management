@@ -85,6 +85,38 @@ public class GradeAction {
         double numericScore;
 
         // Create a scanner object to read input.
+        try (Scanner keyboard = new Scanner(System.in)) {
+            // Get the number of questions in the exam.
+            System.out.print("How many questions are in the exam?");
+            setNumQuestions(Integer.parseInt(keyboard.nextLine()));
+
+            // Get the number of questions missed.
+            System.out.print("How many questions did the student miss?");
+            setNumMissed(Integer.parseInt(keyboard.nextLine()));
+
+            // Calculate the points for each question and the numeric score.
+            this.pointsEach = 100.0 / getNumQuestions();
+            numericScore = 100.0 - (getNumMissed() * getPointsEach());
+
+            // Call the superclass's setScore method to set the numeric score.
+            setScore(numericScore);
+
+            // Create an Exam object.
+            Exam exam = new Exam(getNumQuestions(), getNumMissed());
+
+            // Display the test results.
+            System.out.printf("Each question counts %.2f points.%n", exam.getPointsEach());
+            System.out.printf("The exam score is %.2f%n", exam.getScore());
+            System.out.printf("The exam grade is %c%n", exam.getGrade());
+        }
+    }
+
+    public void Exam(int questions, int missed) {
+        this.numQuestions = questions;
+        this.numMissed = missed;
+        double numericScore;    // To hold the numeric score
+
+        // Create a scanner object to read input.
         Scanner keyboard = new Scanner(System.in);
 
         // Get the number of questions in the exam.
@@ -95,20 +127,5 @@ public class GradeAction {
         System.out.print("How many questions did the student miss?");
         setNumMissed(Integer.parseInt(keyboard.nextLine()));
 
-        // Calculate the points for each question and the numeric score.
-        this.pointsEach = 100.0 / getNumQuestions();
-        numericScore = 100.0 - (getNumMissed() * getPointsEach());
-
-        // Call the superclass's setScore method to set the numeric score.
-        setScore(numericScore);
-
-        // Create an Exam object.
-        Exam exam = new Exam(getNumQuestions(), getNumMissed());
-
-        // Display the test results.
-        System.out.printf("Each question counts %.2f points.%n", exam.getPointsEach());
-        System.out.printf("The exam score is %.2f%n", exam.getScore());
-        System.out.printf("The exam grade is %c%n", exam.getGrade());
-        keyboard.close();
     }
 }

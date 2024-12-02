@@ -7,10 +7,6 @@ public class Exam extends GradeAction {
     private int numMissed;
     private double pointsEach;
 
-    public Exam(int questions, int missed) {
-        this.numQuestions = questions;
-        this.numMissed = missed;
-    }
 
     // Getter and Setter for numQuestions
     public int getNumQuestions() {
@@ -38,9 +34,21 @@ public class Exam extends GradeAction {
     public void setPointsEach(double pointsEach) {
         this.pointsEach = pointsEach;
     }
-        
-    // The adjustScore method adjusts the score by 0.5 points.
-    //if the score is within 0.5 points of the next whole number.
+     
+    public Exam(int questions, int missed) {
+        this.numQuestions = questions;
+        this.numMissed = missed;
+        double numericScore;    // To hold the numeric score
+    }
+    
+    // Calculate the points for each question and the numeric score.
+    public void calculateScore() {
+        pointsEach = 100.0 / numQuestions;
+        double numericScore = 100.0 - (numMissed * pointsEach);
+        setScore(numericScore);
+    }
+
+    // The adjustScore method adjusts the score by 0.5 points. If the score is within 0.5 points of the next whole number.
     private void adjustScore() {
         double fraction = getScore() - (int) getScore();
         if (fraction >= 0.5) {
