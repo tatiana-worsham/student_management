@@ -17,8 +17,8 @@ public class StudentLoader {
         try (BufferedReader br = new BufferedReader(new FileReader(new File(filePath)))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] fields = line.split(","); // Assuming comma-separated values
-                if (fields.length == 5) { // Adjust the number of fields based on the Student class
+                String[] fields = line.split(","); // comma-separated values
+                if (fields.length == 5) { // Assuming 5 fields per line
                     String firstName = fields[0].trim();
                     String lastName = fields[1].trim();
                     String address = fields[2].trim();

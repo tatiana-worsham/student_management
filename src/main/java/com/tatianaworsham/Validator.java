@@ -4,6 +4,10 @@ public class Validator {
     public Validator() {
         // default constructor
     }
+
+    public static boolean validateNumberFromOneToSeven(int number) {
+        return number >= 1 && number <= 7;
+    }
     
     public static boolean validateNumberFromOneToTen(int number) {
         return number >= 1 && number <= 10;

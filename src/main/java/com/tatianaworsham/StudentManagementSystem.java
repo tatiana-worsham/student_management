@@ -81,9 +81,9 @@ public class StudentManagementSystem {
                 System.out.println("7. Exit");
 
                 choice = Integer.parseInt(this.input.nextLine());
-                validChoice = Validator.validateNumberFromOneToTen(choice);
+                validChoice = Validator.validateNumberFromOneToSeven(choice);
                 if (validChoice == false) {
-                    System.out.println("Invalid choice. Please enter a number between 1 and 10.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 7.");
                 }
                 
             } while (!validChoice);
@@ -188,6 +188,7 @@ public class StudentManagementSystem {
         int studentId = generateStudentId();
         Student student = new Student(firstName, lastName, address, phoneNumber, studentId);
         this.students.add(student);
+        this.saveStudentsToFile();
         System.out.println("Student Registered Successfully.");
         System.out.println("First Name: " + student.getFirstName() + ",Last Name:  " + student.getLastName()
                 + ", Address: " + student.getAddress() + ", Phone Number: " + student.getPhoneNumber()
@@ -246,6 +247,7 @@ public class StudentManagementSystem {
             String name = studentToRemove.getFirstName() + " " + studentToRemove.getLastName();
             int id = studentToRemove.getStudentId();
             this.students.remove(studentToRemove);
+            this.saveStudentsToFile();
             System.out.println("ID: " + id + " " + name + " unregistered successfully.");
         } else {
             System.out.println("Student not found.");
@@ -394,6 +396,7 @@ public class StudentManagementSystem {
             System.out.println("Student ID not found.");
         }
     }
+
     /**
      * Updates the address of the given student. Prompts the user to enter a
      * valid address and validates it. If the address is valid, it updates the
@@ -420,7 +423,8 @@ public class StudentManagementSystem {
         } else {
             System.out.println("Student ID not found.");
         }
-    }      
+    }
+
     /**
      * Updates the phone number of the given student. Prompts the user to enter
      * a new phone number and validates it. If the phone number is valid, it
@@ -448,6 +452,7 @@ public class StudentManagementSystem {
             System.out.println("Student ID not found.");
         }
     }
+
     public void Reports() {
         String[] studentNames = {"Gary,Doe", "Julia,Smith", "Bob,Brown", "Charlie,Davis",
             "Diana,Evans", "Eve,Wilson", "Frank,Miller", "Grace,Lee", "Henry,Clark",
