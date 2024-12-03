@@ -34,9 +34,6 @@ public class StudentManagementSystem {
 
     private void saveStudentsToFile() {
         try (PrintWriter writer = new PrintWriter(new FileWriter("data\\student_information.txt"))) {
-            // Write the header
-            writer.println("First Name,Last Name,Address,Phone Number,Student ID");
-
             // Write the student information
             for (Student s : this.students) {
                 writer.printf("%s,%s,%s,%s,%d%n", s.getFirstName(), s.getLastName(), s.getAddress(), s.getPhoneNumber(), s.getStudentId());
